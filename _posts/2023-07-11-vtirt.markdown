@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Variational Temporal IRT: Fast, Accurate, and Explainable Inference of Dynamic Learner Proficiency"
+date: 2023-07-11
+image: /images/vtirt.png
+categories: research
+author: "Yunsung Kim"
+authors: "<strong>Yunsung Kim</strong>, Sree Sankaranarayanan, Chris Piech, Candace Thille"
+venue: "EDM '23: Proceedings of the 16th International Conference on Educational Data Mining"
+pdf: /pdfs/vtirt.pdf
+code: https://github.com/yunsungkim0908/vtirt
+---
+A new algorithm for inferring dynamic learner proficiency when learning occurs alongside assessment. While retaining high inference quality, VTIRT is 28 times faster than the fastest existing inference algorithm and provides interpretable inference by its modular algorithm.

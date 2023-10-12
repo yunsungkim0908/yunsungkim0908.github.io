@@ -1,0 +1,15 @@
+---
+layout: post
+title: "High-Resolution Course Feedback: Timely Feedback Mechanism for Instructors"
+date: 2023-07-20
+image: /images/hrcf.png
+categories: research
+author: "Yunsung Kim"
+authors: "<strong>Yunsung kim</strong>, Chris Piech"
+venue: "L@S '23: Proceedings of the Tenth ACM Conference on Learning @ Scale"
+pdf: /pdfs/hrcf.pdf
+website: ""
+website-comment: "(Coming Soon...)"
+code: https://github.com/yunsungkim0908/high-resolution-course-feedback
+---
+High-Resolution Course Feedback (HRCF) is a tool for minimizing the delay between when an issue comes up in a course and when the instructors get feedback about it. It requests feedback from a small random subset of the students each week, but surveys each student exactly twice per term. We demonstrate that without extra effort compared to mid/end-of-term surveys, HRCF can provide constructive and actionable feedback early on.

@@ -95,6 +95,15 @@ h1 {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
+#profile-image {
+  width: 200px;
+	height: 200px;
+	border-radius: 105px;
+	border: 2px solid gray;
+	background-color: white;
+	padding: 5px;
+}
+
 span.highlight {
   background-color: #ffffd0;
 }
