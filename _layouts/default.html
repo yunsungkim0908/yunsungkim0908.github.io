@@ -30,7 +30,7 @@
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
+            <td class="profile-td">
               <h1>
                 Yunsung Kim
               </h1>
@@ -51,9 +51,11 @@
                 I was an Applied Scientist Intern (Summer 2022) in the Learning Sciences Organization at Amazon, where I was supervised by <a href="https://ed.stanford.edu/faculty/cthille">Prof. Candace Thille</a>. Before coming to Stanford, I finished my undergraduate studies at Columbia University, where I was fortunate to have had worked with <a href="http://www.cs.columbia.edu/~augustin/">Prof. Augustin Chaintreau</a> and <a href="http://www.cs.columbia.edu/~martha/">Prof. Martha Kim</a>.
               </p>
             </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
+            <td class="profile-img-td">
+              <a href="">
               <img id="profile-image" alt="profile photo" src="images/yunsung_kim.jpg">
               <!--<img style="height:200px;border-radius:100px;" alt="profile photo" src="images/yunsung_kim.jpg">-->
+              </a>
             </td>
           </tr>
         </table>
@@ -102,11 +104,23 @@
           {% for cat in post.categories %}
           {% if cat == 'research' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+            <td class="project-img-td">
+              {% if post.pdf %}
+              <a href={{post.pdf}}>
+                <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              </a>
+              {% else %}
               <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              {% endif %}
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
+            <td class="project-td">
+              <h3>
+                {% if post.pdf %}
+                <a href={{post.pdf}}>{{post.title}}</a>
+                {% else %}
+                {{post.title}}
+                {% endif %}
+              </h3>
               <br>
               {{post.authors}}
 
@@ -145,7 +159,6 @@
           {% endfor %}
           {% endfor %}
         </table>
-        <br>
         <br>
         <br>
 

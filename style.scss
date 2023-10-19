@@ -30,19 +30,19 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16.5px;
   font-display: auto;
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16.5px;
   font-display: auto;
 }
 
 h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 27px;
   font-display: auto;
   font-weight: normal;
   padding: 0px;
@@ -62,7 +62,7 @@ h3 {
 
 h1 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: normal;
   font-display: auto;
   text-align: center;
@@ -72,6 +72,76 @@ h1 {
   margin-left: 0px;
   margin-right: 0px;
 
+}
+
+.project-img-td {
+  padding: 2.5%;
+  width: 25%;
+  border-spacing: 0px;
+  border-collapse: separate;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.project-td {
+  padding: 2.5%;
+  width: 75%;
+  vertical-align: middle;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.project-td:after {
+  @media (max-width: 700px) {
+    content: "";
+    display: block;
+    width: 80%;
+    border-bottom: 1px solid grey;
+    position: absolute;
+
+    left: 10%;
+  }
+}
+
+.profile-td {
+  width: 70%;
+  padding: 2.5%;
+  vertical-align: middle;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.profile-img-td {
+  width: 30%;
+  padding: 2.5%;
+  vertical-align: middle;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  tr {
+    justify-content: center;
+    align-items: center
+  }
+  td {
+    display: block
+  }
 }
 
 .one {
