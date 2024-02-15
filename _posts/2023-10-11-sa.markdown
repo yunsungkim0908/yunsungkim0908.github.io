@@ -5,7 +5,7 @@ date: 2023-10-11
 image: /images/stochastic-grade.png
 categories: research
 author: "Yunsung Kim"
-authors: "Jadon Geathers*, <strong>Yunsung Kim*</strong> (Equal Contribution), Chris Piech"
+authors: "<strong>Yunsung Kim*</strong>, Jadon Geathers* (Equal Contribution), Chris Piech"
 venue: "Work in Progress"
 ---
 We develop an auto-grading mechanism for probabilistic programs. Our algorithm, <i>StochasticGrade</i>, yields provable guarantees for grading error, adaptively adjusts the number of calls made to student programs, and allows users to use any disparity scoring function of their choice.
