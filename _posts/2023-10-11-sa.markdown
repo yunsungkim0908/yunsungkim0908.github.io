@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Stochastic Auto-Grading: Grading and Clustering Probabilistic Programs with Certified Error Guarantees"
-date: 2023-10-11
+title: "Grading and Clustering Student Programs That Produce Probabilistic Output"
+date: 2024-02-16
 image: /images/stochastic-grade.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim*</strong>, Jadon Geathers* (Equal Contribution), Chris Piech"
-venue: "Work in Progress"
+venue: "Manuscript Under Review"
 ---
-We develop an auto-grading mechanism for probabilistic programs. Our algorithm, <i>StochasticGrade</i>, yields provable guarantees for grading error, adaptively adjusts the number of calls made to student programs, and allows users to use any disparity scoring function of their choice.
+We develop an open-source assessment framework called <i>StochasticGrade</i>. Based on hypothesis testing, StochasticGrade offers an exponential speedup over standard two-sample hypothesis tests on identifying incorrect programs and allows users to set the desired rate of misgrades and choose a suitable “disparity function,” which measures the dissmilarity between two samples throughout the grading process. Moreover, the features calculated by StochasticGrade can be used for fast and accurate clustering of student programs by error type. 
