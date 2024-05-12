@@ -7,5 +7,7 @@ categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim*</strong>, Jadon Geathers* (Equal Contribution), Chris Piech"
 venue: "EDM '24: Proceedings of the 17th International Conference on Educational Data Mining"
+pdf: /pdfs/stochasticgrade.pdf
+code: https://github.com/yunsungkim0908/stochasticgrade
 ---
-We develop an open-source assessment framework called <i>StochasticGrade</i> for programs that produce probabilistic output. Based on hypothesis testing, StochasticGrade offers an exponential speedup over standard two-sample hypothesis tests on identifying incorrect programs and allows users to set the desired rate of misgrades and choose a suitable “disparity function,” which measures the dissmilarity between two samples throughout the grading process. Moreover, the features calculated by StochasticGrade can be used for fast and accurate clustering of student programs by error type. 
+We develop an open-source assessment framework called <i>StochasticGrade</i> for programs that produce probabilistic output. Based on hypothesis testing, StochasticGrade offers an exponential speedup over the standard two-sample hypothesis testing baseline on identifying incorrect programs, allows users to set the desired rate of misgrades and choose a suitable “disparity function,” which measures the dissmilarity between two samples throughout the grading process. Moreover, the features calculated by StochasticGrade can be used for fast and accurate clustering of student programs by error type. We demonstrate the accuracy and efficiency of StochasticGrade using student data collected from 4 assignments in an introductory programming course.
