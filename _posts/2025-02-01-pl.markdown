@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Personalized Learning Experiences with AI -- An Overview for Decision-Makers and Practitioners"
+date: 2025-02-01
+image: /images/stochastic-grade.png
+categories: research
+author: "Yunsung Kim"
+authors: "<strong>Yunsung Kim</strong>, Candace Thille"
+venue: ""
+pdf: /pdfs/personalized_learning.pdf
+---
+This article provides an overview of technology-mediated personalized learning and the role of AI for higher education decision-makers, administrators, and practitioners. We review the historical foundations of AI and personalized learning, the key components of modern personalized learning systems, and the impact of emerging generative AI technologies. We conclude with a discussion of the role of higher education in shaping the future of AI-driven personalized learning.
