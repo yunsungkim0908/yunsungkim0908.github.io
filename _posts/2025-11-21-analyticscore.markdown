@@ -2,7 +2,7 @@
 layout: post
 title: "Principled Design of Interpretable Automated Scoring for Large-Scale Educational Assessments"
 date: 2025-11-21
-image: /images/analytsicscore.png
+image: /images/analyticscore.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim</strong>, Mike Hardy, Joseph Tey, Candace Thille, Chris Piech"
