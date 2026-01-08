@@ -6,7 +6,7 @@ image: /images/personalized-learning.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim</strong>, Candace Thille"
-venue: "Forthcoming Book Cha[ter"
+venue: "Forthcoming Book Chapter"
 pdf: 
 ---
 This article provides an overview of technology-mediated personalized learning and the role of AI for higher education decision-makers, administrators, and practitioners. We review the historical foundations of AI and personalized learning, the key components of modern personalized learning systems, and the impact of emerging generative AI technologies. We conclude with a discussion of the role of higher education in shaping the future of AI-driven personalized learning.
