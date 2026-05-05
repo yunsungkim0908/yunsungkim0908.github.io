@@ -6,7 +6,7 @@ image: /images/stochastic-grade.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim*</strong>, Jadon Geathers* (Equal Contribution), Chris Piech"
-venue: "EDM '24: Proceedings of the 17th International Conference on Educational Data Mining"
+venue: "EDM, 17th International Conference on Educational Data Mining"
 pdf: /pdfs/stochasticgrade.pdf
 code: https://github.com/yunsungkim0908/stochasticgrade
 ---

@@ -1,0 +1,15 @@
+---
+layout: post
+title: "A Large-Scale Observational Study on Obtaining Lightweight, Randomized Weekly Student Feedback"
+date: 2026-04-16
+image: /images/hrcf-eot.png
+categories: research
+author: "Yunsung Kim"
+authors: "<strong>Yunsung kim</strong>, Hansol Lee, Candace Thille, Chris Piech"
+venue: "L@S, ACM Conference on Learning @ Scale"
+pdf: /pdfs/hrcf-eot.pdf
+website: "https://coursefeedback.org/"
+website-comment: ""
+code: https://github.com/yunsungkim0908/high-resolution-course-feedback
+---
+We show that <a href='https://coursefeedback.org/'>High-Resolution Course Feedback (HRCF)</a> can support measurable improvements in students’ perceived learning experience. Studying 103 HRCF course offerings of 42 computer science courses across 4 academic years, we find that each additional term of HRCF use is associated with modest but significant gains in learning-related evaluations for medium/low-enrollment courses (<250 students).

@@ -1,0 +1,34 @@
+- term: "Spring 2026"
+  course: "CS 407/Educ 407: Lytics Seminar"
+  link: "javascript:void(0)"
+  role: "Instructor"
+
+- term: "Summer 2023"
+  course: "CS109: Probability for Computer Scientists"
+  link: "https://web.stanford.edu/class/archive/cs/cs109/cs109.1238/"
+  role: "Course Instructor"
+
+- term: "Spring 2023"
+  course: "EDUC 259B: Education Data Science Seminar"
+  link: "https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&q=EDUC%20259B:%20Education%20Data%20Science%20Seminar&academicYear=20212022"
+  role: "Guest Lecture, 04/14/2023"
+
+- term: "Spring 2022"
+  course: "CS109: Probability for Computer Scientists"
+  link: "https://web.stanford.edu/class/archive/cs/cs109/cs109.1226/"
+  role: "Teaching Assistant"
+
+- term: "Fall 2021"
+  course: "CS109: Probability for Computer Scientists"
+  link: "https://web.stanford.edu/class/archive/cs/cs109/cs109.1222/"
+  role: "Teaching Assistant"
+
+- term: "Summer 2021"
+  course: "CS109: Probability for Computer Scientists"
+  link: "https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/"
+  role: "Teaching Assistant"
+
+- term: "Spring 2020"
+  course: "CS106A: Programming Methodologies"
+  link: "https://web.stanford.edu/class/archive/cs/cs106a/cs106a.1206/"
+  role: "Teaching Assistant"

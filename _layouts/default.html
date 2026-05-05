@@ -64,6 +64,32 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>News</h2>
+            </td>
+          </tr>
+        </table>
+        <div style="max-height:200px;overflow-y:auto;padding:0 20px;">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
+            {% for item in site.data.news %}
+            <tr>
+              <td style="padding:0.2em 1em 0.2em 0;vertical-align:top;white-space:nowrap;width:1%;">
+                <b>{{ item.date | date: "%b %Y" }}</b>
+              </td>
+              <td style="padding:0.2em 0;vertical-align:top;">
+                {% if item.link %}
+                <a href="{{ item.link }}">{{ item.text }}</a>
+                {% else %}
+                {{ item.text }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Teaching</h2>
             </td>
           </tr>
@@ -72,24 +98,11 @@
           One of my greatest sources of inspiration for my research is my love for teaching! Here are the courses which I've been involved with:
         </p>
         <ul>
+          {% for item in site.data.teaching %}
           <li>
-            <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1238/">(Summer 2023) CS109: Probability for Computer Scientists</a> (Course Instructor)
+            <a href="{{ item.link }}">({{ item.term }}) {{ item.course }}</a> ({{ item.role }})
           </li>
-          <li>
-            <a href="https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&q=EDUC%20259B:%20Education%20Data%20Science%20Seminar&academicYear=20212022">(Spring 2023) EDUC 259B: Education Data Science Seminar</a> (Guest Lecture, 04/14/2023)
-          </li>
-          <li>
-            <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1226/">(Spring 2022) CS109: Probability for Computer Scientists</a> (Teaching Assistant)
-          </li>
-          <li>
-            <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1222/">(Fall 2021) CS109: Probability for Computer Scientists</a> (Teaching Assistant)
-          </li>
-          <li>
-            <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/">(Summer 2021) CS109: Probability for Computer Scientists</a> (Teaching Assistant)
-          </li>
-          <li>
-            <a href="https://web.stanford.edu/class/archive/cs/cs106a/cs106a.1206/">(Spring 2020) CS106A: Programming Methodologies</a> (Teaching Assistant)
-          </li>
+          {% endfor %}
         </ul>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -101,9 +114,22 @@
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
+          {% assign last_year = "" %}
           {% for post in site.posts %}
           {% for cat in post.categories %}
           {% if cat == 'research' %}
+          {% assign post_year = post.date | date: "%Y" %}
+          {% if post_year != last_year %}
+          <tr>
+            <td colspan="2" style="padding:1.5em 2.5% 0.25em 2.5%;">
+              <div style="display:flex;align-items:center;gap:0.75em;">
+                <hr style="flex:1;border:none;border-top:1px solid #ddd;margin:0;">
+                <h2 style="margin:0;color:#888;white-space:nowrap;">{{ post_year }}</h2>
+              </div>
+            </td>
+          </tr>
+          {% assign last_year = post_year %}
+          {% endif %}
           <tr>
             <td class="project-img-td">
               {% if post.pdf %}

@@ -1,0 +1,12 @@
+---
+layout: post
+title: "The \"Astonishing Regularity\" Revisited: Sensitivity of Learning-Rate Estimates to Practice-Sequence Length"
+date: 2026-04-15
+image: /images/lr-length.png
+categories: research
+author: "Yunsung Kim"
+authors: "Hansol Lee, Guilherme Lichand, Cristina Barnard, Lucas Klotz, Candace Thille, <strong>Yunsung Kim</strong>, Benjamin W. Domingue"
+venue: "L@S, ACM Conference on Learning @ Scale"
+pdf: /pdfs/lr-lngth.pdf
+---
+This paper revisits the <a href='https://www.pnas.org/doi/10.1073/pnas.2221311120'>claim</a> that students learn at surprisingly similar rates by testing how sensitive learning-rate estimates are to the length of students’ observed practice sequences. Across 26 datasets, truncating learning sequences at 10 or 5 opportunities substantially inflates estimated learning-rate heterogeneity, indicating that practice-sequence length is an important and underreported source of uncertainty in mixed-effects learning models.
