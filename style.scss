@@ -139,11 +139,26 @@ h1 {
   vertical-align: middle;
 
   @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.profile-img-mobile {
+  display: none;
+
+  @media (max-width: 700px) {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
-    width: 100%;
+    margin: 0.5em 0;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 105px;
+      border: 2px solid gray;
+      background-color: white;
+      padding: 5px;
+    }
   }
 }
 
