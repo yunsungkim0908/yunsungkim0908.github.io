@@ -121,7 +121,7 @@
           {% assign post_year = post.date | date: "%Y" %}
           {% if post_year != last_year %}
           <tr>
-            <td colspan="2" style="padding:1.5em 2.5% 0.25em 2.5%;">
+            <td colspan="2" class="year-marker{% if last_year == '' %} year-marker-first{% endif %}">
               <div style="display:flex;align-items:center;gap:0.75em;">
                 <hr style="flex:1;border:none;border-top:1px solid #ddd;margin:0;">
                 <h2 style="margin:0;color:#888;white-space:nowrap;">{{ post_year }}</h2>
