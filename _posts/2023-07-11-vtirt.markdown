@@ -6,7 +6,7 @@ image: /images/vtirt.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim</strong>, Sree Sankaranarayanan, Chris Piech, Candace Thille"
-venue: "EDM, 16th International Conference on Educational Data Mining"
+venue: "EDM, International Conference on Educational Data Mining"
 pdf: https://educationaldatamining.org/EDM2023/proceedings/2023.EDM-short-papers.24/2023.EDM-short-papers.24.pdf
 code: https://github.com/yunsungkim0908/vtirt
 ---

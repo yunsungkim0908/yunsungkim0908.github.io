@@ -6,7 +6,7 @@ image: /images/hrcf.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung kim</strong>, Chris Piech"
-venue: "L@S, 10th ACM Conference on Learning @ Scale"
+venue: "L@S, ACM Conference on Learning @ Scale"
 pdf: /pdfs/hrcf.pdf
 website: "https://coursefeedback.org/"
 website-comment: ""

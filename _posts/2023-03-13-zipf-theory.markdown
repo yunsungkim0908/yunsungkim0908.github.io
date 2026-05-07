@@ -6,7 +6,7 @@ image: /images/zipf-theory.png
 categories: research
 author: "Yunsung Kim"
 authors: "<strong>Yunsung Kim</strong>, Chris Piech"
-venue: "LAK, 13th International Learning Analytics and Knowledge Conference"
+venue: "LAK, International Learning Analytics and Knowledge Conference"
 pdf: /pdfs/zipf-theory.pdf
 pdf-comment: "(NB: Some figures are not properly displayed in Chrome) "
 code: https://github.com/yunsungkim0908/student-zipf-theory
