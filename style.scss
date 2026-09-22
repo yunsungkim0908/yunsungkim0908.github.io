@@ -123,6 +123,236 @@ h1 {
   }
 }
 
+/* Tools: live sites people can use, two to a row. The window frame and the
+   address are what set these apart from the publication rows below -- a paper
+   has neither.
+   Deliberately inverts the paper convention: dark title, blue address.
+   No card border or shadow: the frame is the only bold element here. */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.5%;
+  row-gap: 2.25em;
+  padding: 0 2.5%;
+
+  @media (max-width: 700px) {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.75em;
+  }
+}
+
+/* Column layout so the address line can be pinned to the bottom, keeping it
+   aligned across a row even when the blurbs run to different lengths. */
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.showcase-frame {
+  max-width: 88%;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Title bar. Three dots and nothing else -- an address pill would compete
+   with the real address printed under the screenshot. */
+.showcase-chrome {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+  padding: 0 6px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #e2e2e2;
+
+  span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #c6c6c6;
+  }
+
+  span:nth-child(1) {
+    background-color: #ff5f57;
+  }
+
+  span:nth-child(2) {
+    background-color: #febc2e;
+  }
+
+  span:nth-child(3) {
+    background-color: #28c840;
+  }
+}
+
+/* Horizontal scroll-snap strip: swipe on touch, trackpad-scroll, or arrow
+   keys once focused. Needs no JavaScript to work. */
+.showcase-reel {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .showcase-reel {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fixed 16:9 window with the screenshot contained inside it, so screenshots
+   are shown whole rather than cropped to fill. A shot that is not 16:9 is
+   letterboxed against the frame's white rather than having its edges cut. */
+.showcase-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background-color: #fff;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Controls sit over the screenshot rather than under the frame, so the
+   whole window reads as one object. */
+.showcase-viewport {
+  position: relative;
+}
+
+.showcase-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #333;
+  cursor: pointer;
+  transition: background-color .15s ease-in-out, color .15s ease-in-out;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.showcase-prev {
+  left: 8px;
+}
+
+.showcase-next {
+  right: 8px;
+}
+
+.showcase-nav:hover:not([disabled]) {
+  background-color: #fff;
+  color: #f09228;
+}
+
+.showcase-nav[disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* The track: current position over total, sitting on the screenshot. Dark
+   scrim rather than light -- screenshots of web apps are mostly white, and a
+   pale track disappears into them. */
+.showcase-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background-color: rgba(23, 26, 31, 0.55);
+}
+
+.showcase-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+.showcase-dot.is-active {
+  background-color: #fff;
+}
+
+.showcase-dot:hover {
+  background-color: #f09228;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-nav,
+  .showcase-dot {
+    transition: none;
+  }
+}
+
+h3.showcase-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  font-size: 17px;
+  margin: 0.75em 0 0.2em 0;
+  text-align: center;
+
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    color: #f09228;
+  }
+}
+
+.showcase-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+}
+
+.showcase-blurb {
+  padding: 0.5em 0 0 0;
+}
+
+.showcase-links {
+  text-align: center;
+}
+
 .profile-td {
   width: 70%;
   padding: 2.5%;

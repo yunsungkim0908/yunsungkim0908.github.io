@@ -1,0 +1,27 @@
+# Tools showcased on the homepage, in the order they appear.
+#
+# Screenshots and the icon are picked up automatically from images/tools/<slug>/
+#   screenshot0.png, screenshot1.png, ...  shown in filename order, swipeable
+#   icon.svg                               shown next to the tool name
+# Adding a screenshot means dropping a file in that folder -- no edit here.
+# (Jekyll ignores files starting with "_", so don't name one that way.)
+#
+# Fields:
+#   name  (required) tool name
+#   slug  (optional) folder name under images/tools/
+#   blurb (optional) one or two lines on what it does and who it's for
+#   site  (optional) live URL. Shown as a plain address -- the protocol, any
+#                    "www." and a trailing slash are stripped automatically.
+#   code  (optional) repo URL
+#   paper (optional) related paper
+#   video (optional) demo video
+
+- name: Learning Strategy Studio (LSS)
+  slug: lss
+  blurb: LSS helps educators and researchers create AI learning companions guided by explicit, editable teaching strategies written in plain language. It brings together instructors' expertise, knowledge of their students, and evidence from the learning sciences to shape the learning companion. Funded by Stanford HAI and the Stanford Accelerator for Learning.
+  site: https://learningstrategiesstudio.org
+
+- name: High-Resolution Course Feedback (HRCF)
+  slug: hrcf
+  blurb: Used in 120+ courses at Stanford to date representing 31k+ cumulative student enrollments, HRCF is a lightweight student-feedback tool that gives instructors timely and actionable insight into how a course is going throughout the term. By surveying only a small random subset of students each week, HRCF provides continuous feedback while keeping the burden on individual students low.
+  site: https://coursefeedback.org

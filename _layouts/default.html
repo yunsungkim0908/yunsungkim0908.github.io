@@ -90,28 +90,143 @@
           </table>
         </div>
 
+        {% if site.data.tools %}
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Teaching</h2>
+              <h2>Tools</h2>
             </td>
           </tr>
         </table>
-        <p style="padding:0% 20px">
-          One of my greatest sources of inspiration for my research is my love for teaching! Here are the courses which I've been involved with:
-        </p>
-        <ul>
-          {% for item in site.data.teaching %}
-          <li>
-            <a href="{{ item.link }}">({{ item.term }}) {{ item.course }}</a> ({{ item.role }})
-          </li>
+        <div class="showcase-grid">
+          {% for item in site.data.tools %}
+          {% comment %}
+            Screenshots and icon are discovered from images/tools/<slug>/ so that
+            adding a screenshot only means dropping a file in the folder.
+          {% endcomment %}
+          {% assign base = "/images/tools/" | append: item.slug | append: "/" %}
+          {% assign shots = site.static_files | where_exp: "f", "f.path contains base" | where_exp: "f", "f.name contains 'screenshot'" | sort: "name" %}
+          {% assign icons = site.static_files | where_exp: "f", "f.path contains base" | where_exp: "f", "f.basename == 'icon'" %}
+          <div class="showcase-item">
+            {% if shots.size > 0 %}
+            <div class="showcase-frame">
+              <span class="showcase-chrome"><span></span><span></span><span></span></span>
+              <div class="showcase-viewport">
+                <div class="showcase-reel" id="reel-{{ item.slug }}" tabindex="0" role="group" aria-label="{{ item.name }} screenshots">
+                  {% for shot in shots %}
+                  <div class="showcase-slide">
+                    <img src="{{ shot.path }}" alt="{{ item.name }} screenshot {{ forloop.index }} of {{ shots.size }}" loading="lazy">
+                  </div>
+                  {% endfor %}
+                </div>
+                {% if shots.size > 1 %}
+                <button type="button" class="showcase-nav showcase-prev" data-reel="reel-{{ item.slug }}" data-step="-1" aria-label="Previous screenshot" aria-controls="reel-{{ item.slug }}">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 4 L7 12 L15 20" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="showcase-nav showcase-next" data-reel="reel-{{ item.slug }}" data-step="1" aria-label="Next screenshot" aria-controls="reel-{{ item.slug }}">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4 L17 12 L9 20" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="showcase-dots" data-reel="reel-{{ item.slug }}">
+                  {% for shot in shots %}
+                  <button type="button" class="showcase-dot{% if forloop.first %} is-active{% endif %}" aria-label="Show screenshot {{ forloop.index }}"></button>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            <h3 class="showcase-title">
+              {% if icons.size > 0 %}
+              <img class="showcase-icon" src="{{ icons.first.path }}" alt="">
+              {% endif %}
+              {% if item.site %}
+              <a href="{{ item.site }}">{{ item.name }}</a>
+              {% else %}
+              <span>{{ item.name }}</span>
+              {% endif %}
+            </h3>
+            <div class="showcase-links">
+              {% assign sep = "" %}
+              {% if item.site %}
+              {% assign host = item.site | remove: "https://" | remove: "http://" | remove_first: "www." | split: "/" | join: "/" %}
+              {{ sep }}<a href="{{ item.site }}">{{ host }}</a>{% assign sep = " / " %}
+              {% endif %}
+              {% if item.code %}
+              {{ sep }}<a href="{{ item.code }}">Code</a>{% assign sep = " / " %}
+              {% endif %}
+              {% if item.paper %}
+              {{ sep }}<a href="{{ item.paper }}">Paper</a>{% assign sep = " / " %}
+              {% endif %}
+              {% if item.video %}
+              {{ sep }}<a href="{{ item.video }}">Video</a>{% assign sep = " / " %}
+              {% endif %}
+            </div>
+            {% if item.blurb %}
+            <p class="showcase-blurb">{{ item.blurb }}</p>
+            {% endif %}
+          </div>
           {% endfor %}
-        </ul>
+        </div>
+        <script>
+          // Carousel controls. Swiping and trackpad scrolling work without any
+          // of this; the arrows, the track and the dots are the visible
+          // affordances layered on top. Degrades to a plain scroller.
+          (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            Array.prototype.forEach.call(document.querySelectorAll('.showcase-reel'), function (reel) {
+              var viewport = reel.parentNode;
+              var slides = reel.querySelectorAll('.showcase-slide');
+              var dots = viewport.querySelectorAll('.showcase-dot');
+              var prev = viewport.querySelector('.showcase-prev');
+              var next = viewport.querySelector('.showcase-next');
+              if (slides.length < 2) return;
+
+              function width() {
+                return slides[0].getBoundingClientRect().width || reel.clientWidth;
+              }
+
+              function index() {
+                var w = width();
+                var i = w ? Math.round(reel.scrollLeft / w) : 0;
+                return Math.max(0, Math.min(slides.length - 1, i));
+              }
+
+              function sync() {
+                var i = index();
+                for (var j = 0; j < dots.length; j++) {
+                  dots[j].classList.toggle('is-active', j === i);
+                }
+                if (prev) prev.disabled = i <= 0;
+                if (next) next.disabled = i >= slides.length - 1;
+              }
+
+              function go(i) {
+                i = Math.max(0, Math.min(slides.length - 1, i));
+                reel.scrollTo({ left: width() * i, behavior: reduce ? 'auto' : 'smooth' });
+                // Scroll events can lag the programmatic scroll, so reflect the
+                // new position straight away rather than waiting for one.
+                setTimeout(sync, 0);
+              }
+
+              Array.prototype.forEach.call(dots, function (dot, i) {
+                dot.addEventListener('click', function () { go(i); });
+              });
+              if (prev) prev.addEventListener('click', function () { go(index() - 1); });
+              if (next) next.addEventListener('click', function () { go(index() + 1); });
+
+              reel.addEventListener('scroll', sync);
+              window.addEventListener('resize', sync);
+              sync();
+            });
+          })();
+        </script>
+        {% endif %}
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Recent Research</h2>
+              <h2>Recent Publications</h2>
             </td>
           </tr>
         </table>
@@ -191,6 +306,24 @@
         </table>
         <br>
         <br>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>Teaching</h2>
+            </td>
+          </tr>
+        </table>
+        <p style="padding:0% 20px">
+          One of my greatest sources of inspiration for my research is my love for teaching! Here are the courses which I've been involved with:
+        </p>
+        <ul>
+          {% for item in site.data.teaching %}
+          <li>
+            <a href="{{ item.link }}">({{ item.term }}) {{ item.course }}</a> ({{ item.role }})
+          </li>
+          {% endfor %}
+        </ul>
 
   <!--
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
