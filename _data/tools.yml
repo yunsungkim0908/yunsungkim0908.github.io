@@ -18,10 +18,10 @@
 
 - name: Learning Strategy Studio (LSS)
   slug: lss
-  blurb: LSS helps educators and researchers create AI learning companions guided by explicit, editable teaching strategies written in plain language. It brings together instructors' expertise, knowledge of their students, and evidence from the learning sciences to shape the learning companion. Funded by Stanford HAI and the Stanford Accelerator for Learning.
+  blurb: LSS helps educators and researchers create AI learning companions guided by explicit, editable teaching strategies written in plain language. It brings together instructors' expertise, knowledge of their students, and evidence from the learning sciences to guide instruction. LSS is part of a broader research initiative to build the infrastructure needed to (1) advance the science of human learning and (2) develop effective AI for teaching and learning.
   site: https://learningstrategiesstudio.org
 
 - name: High-Resolution Course Feedback (HRCF)
   slug: hrcf
-  blurb: Used in 120+ courses at Stanford to date representing 31k+ cumulative student enrollments, HRCF is a lightweight student-feedback tool that gives instructors timely and actionable insight into how a course is going throughout the term. By surveying only a small random subset of students each week, HRCF provides continuous feedback while keeping the burden on individual students low.
+  blurb: Used in 120+ courses at Stanford to date representing 31k+ cumulative student enrollments, HRCF is a lightweight student-feedback tool that gives instructors timely and actionable insight into how a course is going throughout the term. By surveying only a small random subset of students each week, HRCF provides continuous feedback to instructors while keeping the survey burden on individual students low.
   site: https://coursefeedback.org
