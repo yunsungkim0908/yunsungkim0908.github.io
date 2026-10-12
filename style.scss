@@ -432,6 +432,16 @@ h3.showcase-title {
 	padding: 5px;
 }
 
+.profile-toggle {
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform .15s ease-in-out;
+
+  &.flipping {
+    transform: rotateY(90deg);
+  }
+}
+
 span.highlight {
   background-color: #ffffd0;
 }
